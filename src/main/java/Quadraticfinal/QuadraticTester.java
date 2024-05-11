@@ -89,6 +89,7 @@ public class QuadraticTester {
                     System.out.println("Result: "+ result.add(quad1, quad2));
                      }catch(Exception e){
                          System.out.println("Error occured while adding two equations together\n");
+                         scanner.nextLine();
                      }
                     break;
                  }

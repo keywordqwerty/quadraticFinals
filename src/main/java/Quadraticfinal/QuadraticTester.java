@@ -22,8 +22,8 @@ public class QuadraticTester {
     	int b2;
     	int c2;
     	int x2;
-        int input;
-        int input2;
+        int input =0;
+        int input2 = 0;
     	boolean hi=true;
         ArrayList<Quadratic> quads = new ArrayList<Quadratic>();
     	while(hi==true){
@@ -73,27 +73,43 @@ public class QuadraticTester {
                //CASE 1 IS NOW OKAY   
                   
               case 2: //Add two quadratic equations together
-                 while(true){
+                  boolean yessir = true;
+                    if(quads.size()<=1){
+                         System.out.println("Must have at least 2 quadratic equations in the list.");
+                         yessir = false;
+                     }else{
+                        
+                 while(yessir == true){
                      try{
                      System.out.println("Select two quadratic equations to add together:");
+                   
+                     
                      for (int i = 0; i<quads.size(); i++){
                          System.out.println(i +" " + quads.get(i));
-                     }
+                     }                   
+                         
                     System.out.println("1st Quadratic equation: ");
-                    input = scanner.nextInt();
+                    input = scanner.nextInt();                 
                     System.out.println("2nd Quadratic equation:");
                     input2 = scanner.nextInt();
-                    Quadratic quad1 = quads.get(input);
+                    if(input > quads.size() || input2 > quads.size()){
+                       System.out.println("Cannot add from an empty equation. Please only enter numbers that are within the choices.");
+                       break;
+                    }else{
+                         Quadratic quad1 = quads.get(input);
                     Quadratic quad2 = quads.get(input2);
                     Quadratic result = new Quadratic();
-                    System.out.println("Result: "+ result.add(quad1, quad2));
+                    System.out.println("Result: "+ result.add(quad1, quad2));                       
+                    }                                  
                      }catch(Exception e){
-                         System.out.println("Error occured while adding two equations together\n");
+                         System.out.println("Error occured in the process of addition.\n");
                          scanner.nextLine();
-                     }
-                    break;
-                 }
-                 
+                         break;
+                     }   
+                     break;
+                 }                
+                    }    
+                      break;  
                  
               case 3: //Check if quadratic is a perfect square
                   while (true){ 

@@ -28,6 +28,7 @@ public class QuadraticTester {
         ArrayList<Quadratic> quads = new ArrayList<Quadratic>();
     	while(hi==true){
    	boolean yes =true;
+        
     	//boolean answer = true;
    	 //while(answer){
          
@@ -41,10 +42,11 @@ public class QuadraticTester {
     evaluate()
 
 */
+         
          int answer;
          System.out.println("1. Create quadratic equation ");
          System.out.println("2. Add two quadratic equations together ");
-         System.out.println("3. Is it a perfect square?");
+         System.out.println("3. Check if quadratic is a perfect square");
          System.out.println("4. Get value of x^1 and x^2");
          System.out.println("5. Evaluate the equation");
          System.out.println("6. Exit");
@@ -89,6 +91,8 @@ public class QuadraticTester {
                      }
                     break;
                  }
+                 
+                 
               case 3: 
                   while (true){ 
                       try{
@@ -105,6 +109,8 @@ public class QuadraticTester {
                 }
              }
                   break;
+                  
+                  
               case 4: 
                   while (true){
                       System.out.println("Select a quadratic equation to enter value of x: ");

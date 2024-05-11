@@ -9,7 +9,6 @@ package Quadraticfinal;
  *
  * @author percy
  */
-import java.util.ArrayList;
 public class Quadratic {
 	private int a;
 	private int b;

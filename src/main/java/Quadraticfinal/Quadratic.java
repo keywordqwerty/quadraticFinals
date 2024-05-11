@@ -96,6 +96,8 @@ public double getSecondRoot(){
 	return result;
 }
 
+
+//Checks if its a perfect square. If Discriminant != 0 then it is not a perfect square
 public void isPerfectSquare(){
 	if(getDiscriminant()==0){
     	System.out.println("The equation is a perfect square\n");
@@ -103,6 +105,7 @@ public void isPerfectSquare(){
     	System.out.println("The equation is not a perfect square\n");
 	}
 }
+
 
 public Quadratic add(Quadratic otherAdd,Quadratic otherAdd2){
   Quadratic result = new Quadratic();
@@ -112,12 +115,18 @@ public Quadratic add(Quadratic otherAdd,Quadratic otherAdd2){
   return result;
 }
 
+//Displaying the quadratic
 public void displayQuadratic(){
 	System.out.println("The result of two quadratic equations added together is: ");
    System.out.println(this.a + "x^2 " +"+ " +  this.b + "x + " + this.c + " = 0");
    
 }
 }
+
+
+
+
+
 //java.lang.Math.sqrt
 
 

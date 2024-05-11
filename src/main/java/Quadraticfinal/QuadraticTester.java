@@ -28,31 +28,31 @@ public class QuadraticTester {
         ArrayList<Quadratic> quads = new ArrayList<Quadratic>();
     	while(hi==true){
    	boolean yes =true;
-        
-    	//boolean answer = true;
-   	 //while(answer){
-         
-         /*  displayQuadratic()
-    add(Quadratic otherAdd)
-    isPerfectSquare()
-    getSecondRoot()
-    getFirstRoot()
-    isImaginary()
-    getDiscriminant()
-    evaluate()
-
-*/
-         
-         int answer;
+       
+    	int answer = 0;
+        while(yes){        
          System.out.println("1. Create quadratic equation ");
          System.out.println("2. Add two quadratic equations together ");
          System.out.println("3. Check if quadratic is a perfect square");
          System.out.println("4. Get value of x^1 and x^2");
-         System.out.println("5. Evaluate the equation");
+         System.out.println("5. Evaluate the quadratic equation");
          System.out.println("6. Exit");
-         answer = scanner.nextInt();
+         
+            try{
+             answer = scanner.nextInt();
+             yes = false;
+            }catch(Exception e){
+                System.out.println("Error. What you provided is not a proper integer.");
+                scanner.nextLine();
+                yes = true;
+            }
+         }
+            
+            
+            
          switch (answer){
-             case 1:
+             //CASE 1 IS NOW OKAY
+             case 1: //Create quadratic equation
                  while(true){
                         System.out.println("Enter the coefficients of the quadratic equation (a, b, c)");
                 try{
@@ -65,13 +65,14 @@ public class QuadraticTester {
                         System.out.println("Equation is now added to the list.\n");
                         break;                  
                 }catch(Exception e){
-                           System.out.println("Error occured while entering coefficients.\n");
+                           System.out.println("Error occured while entering coefficients. Please enter only integers.\n");
                            scanner.nextLine();       	 
                     }
                  }
                   break;
+               //CASE 1 IS NOW OKAY   
                   
-              case 2: 
+              case 2: //Add two quadratic equations together
                  while(true){
                      try{
                      System.out.println("Select two quadratic equations to add together:");
@@ -93,7 +94,7 @@ public class QuadraticTester {
                  }
                  
                  
-              case 3: 
+              case 3: //Check if quadratic is a perfect square
                   while (true){ 
                       try{
                  System.out.println("Select a quadratic equation to check: ");
@@ -122,12 +123,45 @@ public class QuadraticTester {
                       input2 = scanner.nextInt();
                       Quadratic forthex = quads.get(input);
                       forthex.setX(input2);
+                      break;
                   }
+              default: 
+                      System.out.println("Option Unavailable.");
+                      break;
+               
          }
         }
         }
 }
              
+
+
+//boolean answer = true;
+   	 //while(answer){
+         
+         /*  displayQuadratic()
+    add(Quadratic otherAdd)
+    isPerfectSquare()
+    getSecondRoot()
+    getFirstRoot()
+    isImaginary()
+    getDiscriminant()
+    evaluate()
+
+*/
+//---------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
              /*
              case 2: add()
                      break;

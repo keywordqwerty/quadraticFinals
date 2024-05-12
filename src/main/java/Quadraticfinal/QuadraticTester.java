@@ -196,11 +196,14 @@ public class QuadraticTester {
                       }
                   }else{
                       System.out.println("No quadratic equations existent in the list.");
+                      break;
                   }
-              case 5: 
+                  
+              case 5: //EVALUATE A QUADRATIC EQUATION
                   
                   break;
                
+                  
                   //OK NA
               case 6:  //DISPLAY ALL QUADRATICS IN THE LIST
                   if(!quads.isEmpty()){

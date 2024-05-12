@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Quadraticfinal;
-
+import java.util.ArrayList;
 
 /**
  *
@@ -24,7 +24,7 @@ public class Quadratic {
     
         @Override
     public String toString() {
-        return a + "x^2 + " + b + "x + " + c;
+        return a + "x^2 + " + b + "x + " + c + " = 0";
     }
 
     
@@ -106,26 +106,45 @@ public void isPerfectSquare(){
 }
 
 
-public Quadratic add(Quadratic otherAdd,Quadratic otherAdd2){
+public void /*Quadratic*/ add(Quadratic quad1, Quadratic quad2){
   Quadratic result = new Quadratic();
-  result.a = otherAdd.a + otherAdd2.a;
-  result.b = otherAdd.b + otherAdd2.b;
-  result.c = otherAdd.c + otherAdd.c;
-  return result;
+  result.setA(quad1.getA() + quad2.getA());
+  result.setB(quad1.getB() + quad2.getB());
+  result.setC(quad1.getC() + quad2.getC());
+  //result.a = otherAdd.a + otherAdd2.a;
+  //result.b = otherAdd.b + otherAdd2.b;
+  //result.c = otherAdd.c + otherAdd.c;
+  System.out.println("The result of two quadratic equations added together is: ");
+  System.out.println(result);
 }
+
+
+
+
+public static void displayAllQuadratic(ArrayList<Quadratic> all){
+    for(Quadratic quads : all){
+        System.out.println(quads);       
+        }
+    }
+}
+
+
+
+//prevs
 
 //Displaying the quadratic
-public void displayQuadratic(){
+/*public void displayAddedQuadratic(Quadratic result){
 	System.out.println("The result of two quadratic equations added together is: ");
-   System.out.println(this.a + "x^2 " +"+ " +  this.b + "x + " + this.c + " = 0");
-   
-}
-}
+        System.out.println(this.a + "x^2 " +"+ " +  this.b + "x + " + this.c + " = 0"); 
+}*/
 
 
 
+//-----------------------
 
 
+
+//SHITCODE
 //java.lang.Math.sqrt
 
 

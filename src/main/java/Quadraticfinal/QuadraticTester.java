@@ -36,7 +36,8 @@ public class QuadraticTester {
          System.out.println("3. Check if quadratic is a perfect square");
          System.out.println("4. Get value of x^1 and x^2");
          System.out.println("5. Evaluate the quadratic equation");
-         System.out.println("6. Exit");
+         System.out.println("6. Display all quadratic");
+         System.out.println("7. Exit");
          
             try{
              answer = scanner.nextInt();
@@ -81,15 +82,15 @@ public class QuadraticTester {
                   
               //CASE 2 NOW OKAY
               case 2: //Add two quadratic equations together
-                  boolean yessir = true;
+                    boolean yessir = true;
                     if(quads.size()<=1){
                          System.out.println("Must have at least 2 quadratic equations in the list.");
                          yessir = false;
                      }else{
                         
-                 while(yessir == true){
-                     try{
-                     System.out.println("Select two quadratic equations to add together:");
+                        while(yessir == true){
+                      try{
+                      System.out.println("Select two quadratic equations to add together:");
                    
                      
                      for (int i = 0; i<quads.size(); i++){
@@ -100,15 +101,21 @@ public class QuadraticTester {
                     input = scanner.nextInt();                 
                     System.out.println("2nd Quadratic equation:");
                     input2 = scanner.nextInt();
+                    
                     if(input > quads.size() || input2 > quads.size()){
-                       System.out.println("Cannot add from an empty equation. Please only enter numbers that are within the choices.");
-                       break;
+                         System.out.println("Cannot add from an empty equation. Please only enter numbers that are within the choices.");
+                         break;
                     }else{
-                         Quadratic quad1 = quads.get(input);
+                        
+                    Quadratic quad1 = quads.get(input);
                     Quadratic quad2 = quads.get(input2);
-                    Quadratic result = new Quadratic();
-                    System.out.println("Result: "+ result.add(quad1, quad2));                             
-                    }                                  
+                    Quadratic result = new Quadratic(); 
+                    result.add(quad1, quad2);
+                  
+                                          
+                    }
+                    
+                    
                      }catch(Exception e){
                          System.out.println("Error occured in the process of addition.\n");
                          scanner.nextLine();
@@ -133,6 +140,7 @@ public class QuadraticTester {
                  }
                   System.out.println("\n");
                    input = scanner.nextInt();
+                   
                  if(input > quads.size()){
                      System.out.println("Cannot check on empty equation.");
                  }else{               
@@ -163,16 +171,40 @@ public class QuadraticTester {
                       forthex.setX(input2);
                       break;
                   }
+              case 5: 
+                  
+                  break;
+               
+                  
+              case 6:  //DISPLAY ALL QUADRATICS IN THE LIST
+                  if(quads.size() > 0){
+                  Quadratic.displayAllQuadratic(quads);
+                 System.out.println("");
+                  }else{
+                      System.out.println("No quadratic equations exist in the list.\n");
+                  }
+                  break;
+                         
+              
+                  
               default: 
                       System.out.println("Option Unavailable.");
                       break;
                
-         }
-        }
-        }
+       }
+     }
+   }
 }
              
 
+                    //Addition quad (REMOVED)
+                    /*result.setA(quad1.getA() + quad2.getA());
+                    result.setB(quad1.getB() + quad2.getB());
+                    result.setC(quad1.getC() + quad2.getC());*/      
+                    //result.displayAddedQuadratic(result); 
+
+
+//-----------------
 
 //boolean answer = true;
    	 //while(answer){

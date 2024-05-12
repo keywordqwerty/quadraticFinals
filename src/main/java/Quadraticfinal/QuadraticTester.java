@@ -71,7 +71,9 @@ public class QuadraticTester {
                  }
                   break;
                //CASE 1 IS NOW OKAY   
+               
                   
+              //CASE 2 NOW OKAY
               case 2: //Add two quadratic equations together
                   boolean yessir = true;
                     if(quads.size()<=1){
@@ -99,7 +101,7 @@ public class QuadraticTester {
                          Quadratic quad1 = quads.get(input);
                     Quadratic quad2 = quads.get(input2);
                     Quadratic result = new Quadratic();
-                    System.out.println("Result: "+ result.add(quad1, quad2));                       
+                    System.out.println("Result: "+ result.add(quad1, quad2));                             
                     }                                  
                      }catch(Exception e){
                          System.out.println("Error occured in the process of addition.\n");
@@ -110,6 +112,8 @@ public class QuadraticTester {
                  }                
                     }    
                       break;  
+                  //CASE 2 NOW OKAY    
+                      
                  
               case 3: //Check if quadratic is a perfect square
                   while (true){ 
@@ -117,6 +121,9 @@ public class QuadraticTester {
                  System.out.println("Select a quadratic equation to check: ");
                  for(int i = 0; i<quads.size(); i++){
                      System.out.println(i + " " + quads.get(i));
+                 }
+                 if(true){
+                     
                  }
                  System.out.println("\n");
                   input = scanner.nextInt();

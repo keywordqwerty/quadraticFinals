@@ -34,10 +34,13 @@ public class QuadraticTester {
          System.out.println("1. Create quadratic equation ");
          System.out.println("2. Add two quadratic equations together ");
          System.out.println("3. Check if quadratic is a perfect square");
-         System.out.println("4. Get value of x^1 and x^2");
+         System.out.println("4. Get first and second root");
          System.out.println("5. Evaluate the quadratic equation");
          System.out.println("6. Display all quadratic");
-         System.out.println("7. Exit");
+         System.out.println("7. Check if roots are imaginary");
+         System.out.println("8. Get discriminant");
+         System.out.println("9. Exit");
+         
          
             try{
              answer = scanner.nextInt();
@@ -127,12 +130,9 @@ public class QuadraticTester {
                       break;  
                   //CASE 2 NOW OKAY    
                       
-                 
+                 //CASE 3 NOW OKAY
               case 3: //Check if quadratic is a perfect square
-                  if(quads.size() > 0){
-                      
-                  
-                  while (true){ 
+                  if(!quads.isEmpty()){               
                       try{
                  System.out.println("Select a quadratic equation to check: ");
                  for(int i = 0; i<quads.size(); i++){
@@ -149,43 +149,76 @@ public class QuadraticTester {
                  }
                  
             	}catch (Exception e){
-                    System.out.println("Error finding the perfect square");
+                    System.out.println("Error finding the perfect square. Only enter integers or options that are in the choices.\n");
+                    scanner.nextLine();   
+                    break;
                 }
-             }
+             
                   break;
                   }else{
                   System.out.println("No quadratic option to choose from.");
                   break;
                   }
+                  //CASE 3 NOW OKAY
                   
-              case 4: 
-                  while (true){
-                      System.out.println("Select a quadratic equation to enter value of x: ");
-                      for (int i = 0; i<quads.size(); i++){
-                          System.out.println(quads.get(i));
+              case 4: //Get first root and second root
+                  
+                  if(!quads.isEmpty()){
+                      try{
+                      System.out.println("Select a quadratic equation to check: ");
+                      for(int i=0; i<quads.size(); i++){
+                          System.out.println(i + " " + quads.get(i));
                       }
                       input = scanner.nextInt();
-                      System.out.println("\nEnter value of x: ");
-                      input2 = scanner.nextInt();
-                      Quadratic forthex = quads.get(input);
-                      forthex.setX(input2);
-                      break;
+                    
+                       if(input > quads.size()){
+                     System.out.println("Cannot check on empty equation.");
+                         }else{  
+                           Quadratic objectparaniroot = quads.get(input);
+                           objectparaniroot.getFirstRoot();
+                           objectparaniroot.getSecondRoot();
+                           double first = objectparaniroot.getFirstRoot();
+                           double second = objectparaniroot.getSecondRoot();
+                           
+                        if (first == 0.0 && second == 0.0) {
+                         System.out.println("The quadratic equation has a single real root or a repeated root.");
+                            System.out.println("First root: " + first);
+                            System.out.println("Second root: " + second);
+                              } else {
+                             System.out.println("First root: " + first);
+                             System.out.println("Second root: " + second);
+                              }
+                           break;
+                       }             
+                      }catch(Exception e){
+                          System.out.println("Error getting first root or second root. Enter only integers or existent options.");
+                          scanner.nextLine();
+                      }
+                  }else{
+                      System.out.println("No quadratic equations existent in the list.");
                   }
               case 5: 
                   
                   break;
                
-                  
+                  //OK NA
               case 6:  //DISPLAY ALL QUADRATICS IN THE LIST
-                  if(quads.size() > 0){
+                  if(!quads.isEmpty()){
                   Quadratic.displayAllQuadratic(quads);
                  System.out.println("");
                   }else{
                       System.out.println("No quadratic equations exist in the list.\n");
                   }
                   break;
-                         
+                   //OK NA      
+              case 7:
+                  break;
               
+              case 8:
+                  break;
+              
+              case 9:
+                  System.exit(0);
                   
               default: 
                       System.out.println("Option Unavailable.");
@@ -196,6 +229,15 @@ public class QuadraticTester {
    }
 }
              
+
+                  
+                  
+                                    
+
+                  
+                  
+
+
 
                     //Addition quad (REMOVED)
                     /*result.setA(quad1.getA() + quad2.getA());

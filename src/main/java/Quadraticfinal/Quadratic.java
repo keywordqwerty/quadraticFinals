@@ -87,11 +87,13 @@ public void isImaginary(){
 }
 public double getFirstRoot(){
    double result = (int)(-b + java.lang.Math.sqrt(getDiscriminant())) / (2*a);
+  
    return result;
 }
 
 public double getSecondRoot(){
 	double result = (int) (-b - java.lang.Math.sqrt(getDiscriminant())) / (2*a);
+        
 	return result;
 }
 

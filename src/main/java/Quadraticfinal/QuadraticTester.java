@@ -60,13 +60,19 @@ public class QuadraticTester {
                         b = scanner.nextInt();
                         c = scanner.nextInt();
                        
+                        if(a == 0){
+                            System.out.println("This is not a quadratic equation.");
+                           break;                  
+                        }else{
                         Quadratic quad = new Quadratic(a,b,c);
                         quads.add(quad);
                         System.out.println("Equation is now added to the list.\n");
-                        break;                  
+                        break;   
+                        }
                 }catch(Exception e){
                            System.out.println("Error occured while entering coefficients. Please enter only integers.\n");
-                           scanner.nextLine();       	 
+                           scanner.nextLine();       	
+                           break;
                     }
                  }
                   break;
@@ -116,25 +122,33 @@ public class QuadraticTester {
                       
                  
               case 3: //Check if quadratic is a perfect square
+                  if(quads.size() > 0){
+                      
+                  
                   while (true){ 
                       try{
                  System.out.println("Select a quadratic equation to check: ");
                  for(int i = 0; i<quads.size(); i++){
                      System.out.println(i + " " + quads.get(i));
                  }
-                 if(true){
-                     
-                 }
-                 System.out.println("\n");
-                  input = scanner.nextInt();
+                  System.out.println("\n");
+                   input = scanner.nextInt();
+                 if(input > quads.size()){
+                     System.out.println("Cannot check on empty equation.");
+                 }else{               
                   quads.get(input).isPerfectSquare();
-                  break;
+                   break;
+                 }
+                 
             	}catch (Exception e){
                     System.out.println("Error finding the perfect square");
                 }
              }
                   break;
-                  
+                  }else{
+                  System.out.println("No quadratic option to choose from.");
+                  break;
+                  }
                   
               case 4: 
                   while (true){

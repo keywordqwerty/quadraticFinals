@@ -242,7 +242,7 @@ public class QuadraticTester {
                	//CASE 6 OK NA  
              	 
              	 
-          	case 7:
+          	case 7: //CASE 7 OKAY NA
              	 if(!quads.isEmpty()){
                      try{
                          System.out.println("Select a quadratic equation to check: ");
@@ -254,7 +254,8 @@ public class QuadraticTester {
                       	System.out.println("Cannot check on empty equation.");
                   	}else{
                             Quadratic discrim = quads.get(input);
-                            System.out.println("The discriminant is: " + discrim);
+                            int discrimVal = discrim.getDiscriminant();
+                            System.out.println("The discriminant is: " + discrimVal);
                         }               
                  }catch(Exception e){
                      System.out.println("Error occured finding the discriminant.");
@@ -264,8 +265,30 @@ public class QuadraticTester {
                      System.out.println("No quadratic equation existent in the list.\n");               	             	        	 
                  }
               	break;
+               //CASE 7 OKAY NA
          	 
           	case 8:
+                                 	 if(!quads.isEmpty()){
+                     try{
+                         System.out.println("Select a quadratic equation to check: ");
+                  	for(int i = 0; i<quads.size(); i++){
+                      	System.out.println(i + " " + quads.get(i));
+                  	}
+                  	input = scanner.nextInt();
+                  	if(input > quads.size()){
+                      	System.out.println("Cannot check on empty equation.");
+                  	}else{
+                            Quadratic isIm = quads.get(input);
+                            isIm.isImaginary();
+                        }               
+                 }catch(Exception e){
+                     System.out.println("Error occured in identifying the roots.");
+                     scanner.nextLine();
+                 }
+          }else{
+                     System.out.println("No quadratic equation existent in the list.\n");   
+                        
+                 }
               	break;
          	 
           	case 9:

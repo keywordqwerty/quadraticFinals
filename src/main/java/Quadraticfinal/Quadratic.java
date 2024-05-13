@@ -80,9 +80,9 @@ public int getDiscriminant(){
 
 public void isImaginary(){
 	if (getDiscriminant()<0){
-    	System.out.println("The roots are imaginary");
+    	System.out.println("The roots are imaginary\n");
 	}else{
-	System.out.println("The roots are not imaginary");
+	System.out.println("The roots are not imaginary\n");
     }
 }
 

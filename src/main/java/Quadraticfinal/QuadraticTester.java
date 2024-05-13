@@ -161,6 +161,7 @@ public class QuadraticTester {
                   }
                   //CASE 3 NOW OKAY
                   
+                  
               case 4: //Get first root and second root
                   
                   if(!quads.isEmpty()){

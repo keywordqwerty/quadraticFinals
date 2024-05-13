@@ -38,8 +38,8 @@ public class QuadraticTester {
      	System.out.println("4. Get first and second root");
      	System.out.println("5. Evaluate the quadratic equation");
      	System.out.println("6. Display all quadratic");
-     	System.out.println("7. Check if roots are imaginary");
-     	System.out.println("8. Get discriminant");
+     	System.out.println("7. Get discriminant");
+     	System.out.println("8. Check if roots are imaginary");
      	System.out.println("9. Exit");
     	 
     	 
@@ -243,7 +243,26 @@ public class QuadraticTester {
              	 
              	 
           	case 7:
-             	 
+             	 if(!quads.isEmpty()){
+                     try{
+                         System.out.println("Select a quadratic equation to check: ");
+                  	for(int i = 0; i<quads.size(); i++){
+                      	System.out.println(i + " " + quads.get(i));
+                  	}
+                  	input = scanner.nextInt();
+                  	if(input > quads.size()){
+                      	System.out.println("Cannot check on empty equation.");
+                  	}else{
+                            Quadratic discrim = quads.get(input);
+                            System.out.println("The discriminant is: " + discrim);
+                        }               
+                 }catch(Exception e){
+                     System.out.println("Error occured finding the discriminant.");
+                     scanner.nextLine();
+                 }
+          }else{
+                     System.out.println("No quadratic equation existent in the list.\n");               	             	        	 
+                 }
               	break;
          	 
           	case 8:

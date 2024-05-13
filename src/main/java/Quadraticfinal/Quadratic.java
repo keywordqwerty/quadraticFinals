@@ -83,8 +83,9 @@ public void isImaginary(){
     	System.out.println("The roots are imaginary");
 	}else{
 	System.out.println("The roots are not imaginary");
+    }
 }
-}
+
 public double getFirstRoot(){
    double result = (-b + java.lang.Math.sqrt(getDiscriminant())) / (2*a);
   

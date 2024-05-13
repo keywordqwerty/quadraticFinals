@@ -161,7 +161,7 @@ public class QuadraticTester {
                   }
                   //CASE 3 NOW OKAY
                   
-                  
+                  //CASE 4 NOW OKAY
               case 4: //Get first root and second root
                   
                   if(!quads.isEmpty()){
@@ -198,14 +198,30 @@ public class QuadraticTester {
                   }else{
                       System.out.println("No quadratic equations existent in the list.");
                       break;
-                  }
+                  }//CASE 4 NOW OK
                   
               case 5: //EVALUATE A QUADRATIC EQUATION
-                  
+                  if(!quads.isEmpty()){
+                      try{
+                          System.out.println("Select a quadratic to checK: ");
+                          for(int i = 0; i<quads.size(); i++){
+                              System.out.println(i + " " + quads.get(i));
+                          }
+                          input = scanner.nextInt();
+                            if(input > quads.size()){
+                     System.out.println("Cannot check on empty equation.");
+                         }else{ 
+                                
+                            } 
+                      }catch(Exception e){
+                          System.out.println("Error evaluating. Enter only integers or existent options.");
+                          scanner.nextLine();
+                      }
+                  }
                   break;
                
                   
-                  //OK NA
+                  //CASE 6 NOW OKAY
               case 6:  //DISPLAY ALL QUADRATICS IN THE LIST
                   if(!quads.isEmpty()){
                   Quadratic.displayAllQuadratic(quads);
@@ -214,15 +230,18 @@ public class QuadraticTester {
                       System.out.println("No quadratic equations exist in the list.\n");
                   }
                   break;
-                   //OK NA      
+                   //OK NA   
+                  
               case 7:
                   break;
               
               case 8:
                   break;
               
-              case 9:
+              case 9://CASE 9 NOW OKAY
                   System.exit(0);
+                  break; 
+                  //CASE 9 NOW OKAY
                   
               default: 
                       System.out.println("Option Unavailable.");

@@ -25,6 +25,7 @@ public class QuadraticTester {
         int input =0;
         int input2 = 0;
     	boolean hi=true;
+        
         ArrayList<Quadratic> quads = new ArrayList<Quadratic>();
     	while(hi==true){
    	boolean yes =true;
@@ -141,7 +142,7 @@ public class QuadraticTester {
                   System.out.println("\n");
                    input = scanner.nextInt();
                    
-                 if(input > quads.size()){
+                 if(input >  quads.size()){
                      System.out.println("Cannot check on empty equation.");
                  }else{               
                   quads.get(input).isPerfectSquare();
@@ -171,7 +172,7 @@ public class QuadraticTester {
                       }
                       input = scanner.nextInt();
                     
-                       if(input > quads.size()){
+                       if(input >  quads.size()){
                      System.out.println("Cannot check on empty equation.");
                          }else{  
                            Quadratic objectparaniroot = quads.get(input);
@@ -198,13 +199,38 @@ public class QuadraticTester {
                       System.out.println("No quadratic equations existent in the list.");
                       break;
                   }
-                  
+                 //CASE 5 OK NA
               case 5: //EVALUATE A QUADRATIC EQUATION
-                  
+                  if(!quads.isEmpty()){
+                      try{
+                      System.out.println("Select a quadratic equation to check: ");
+                      for(int i = 0; i<quads.size(); i++){
+                          System.out.println(i + " " + quads.get(i));
+                      }
+                      input = scanner.nextInt();
+                      if(input > quads.size()){
+                          System.out.println("Cannot check on empty equation.");
+                      }else{
+                           Quadratic eval = quads.get(input);
+                          System.out.println("Enter the value of X: ");
+                          int xVal = scanner.nextInt();
+                          eval.setX(xVal);
+                          int result = eval.evaluate();                   
+                      System.out.println("The evaluated quadratic is:  " + answer);
+                      }
+                                                  
+                    }catch(Exception e){
+                           System.out.println("Error occurred while evaluating the quadratic equation.");
+                           scanner.nextLine();
+                         }
+                  }else{
+                      System.out.println("No quadratic equation existent in the list.");                    
+                  }                
                   break;
-               
+                  //CASE 5 OK NA
                   
-                  //OK NA
+                  
+                  //CASE 6 OK NA
               case 6:  //DISPLAY ALL QUADRATICS IN THE LIST
                   if(!quads.isEmpty()){
                   Quadratic.displayAllQuadratic(quads);
@@ -213,8 +239,11 @@ public class QuadraticTester {
                       System.out.println("No quadratic equations exist in the list.\n");
                   }
                   break;
-                   //OK NA      
+                   //CASE 6 OK NA  
+                  
+                  
               case 7:
+                  
                   break;
               
               case 8:

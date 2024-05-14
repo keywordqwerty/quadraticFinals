@@ -98,6 +98,7 @@ public class QuadraticTester {
               	 
                 	 
                  	for (int i = 0; i<quads.size(); i++){
+                            
                      	System.out.println(i +" " + quads.get(i));
                  	}              	 
                     	 
@@ -200,7 +201,8 @@ public class QuadraticTester {
                   	break;
               	}
              	//CASE 5 OK NA
-          	case 5: //EVALUATE A QUADRATIC EQUATION
+          	case 5: //EVALUATE A QUADRATIC EQUATION  
+                    //REFACTOR EVALUATING  4 4 1 AND X = 2 RESULT SHOULD BE 25. THE RESULT WAS 5 WHICH WAS WRONG
               	if(!quads.isEmpty()){
                   	try{
                   	System.out.println("Select a quadratic equation to check: ");
@@ -216,7 +218,7 @@ public class QuadraticTester {
                       	int xVal = scanner.nextInt();
                       	eval.setX(xVal);
                       	int result = eval.evaluate();              	 
-                  	System.out.println("The evaluated quadratic is:  " + answer);
+                  	System.out.println("The evaluated quadratic is:  " + result);
                   	}
                                              	 
                 	}catch(Exception e){

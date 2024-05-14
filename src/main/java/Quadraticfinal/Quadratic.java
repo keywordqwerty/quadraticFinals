@@ -68,7 +68,7 @@ public int getX(){
 }
 
 public int evaluate(){
-	int result = (a*x*x) + (b*x) + c;
+	int result = (a*getX()*getX()) + (b*x) + c;
 	return result;
 	///3,5,1
 }
